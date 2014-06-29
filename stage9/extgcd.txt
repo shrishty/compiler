@@ -1,0 +1,48 @@
+decl
+	int n, m, l;
+	int extgcd(int a, b);
+enddecl
+
+int extgcd(int a, b) {
+	ldecl
+		int temp, rval;
+	endldecl
+		
+	if(a == 0) then
+		n = b;
+		m = 0;
+		l = 1;
+		temp = b;
+	else
+		if(a < b) then
+			temp = extgcd(b, a);
+		else
+			temp = extgcd(a mod b, a);
+			n = n;
+			temp = m;
+			m = l - (b / a) * m;
+			l = temp;
+		endif;
+	endif;
+	
+	return temp;
+}
+
+int main() {
+	ldecl
+		int p, q;
+	endldecl
+	
+	p = 3;
+	q = 27;
+	
+	p = extgcd(p, q);
+	write(n);
+	write(m);
+	write(l);
+	
+	return 0;
+}	
+	
+		 
+		

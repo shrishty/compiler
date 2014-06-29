@@ -1,0 +1,70 @@
+decl
+	int a, b, c;
+	int top(int &m, &n);
+	int swap(int &a, &b);
+	int pat(int &m, &n);
+enddecl
+
+int top(int &m, &n) {
+	ldecl
+		int l;
+	endldecl
+	write(m)
+	write(n);
+	l = swap(m, n);
+	write(m);
+	write(n);
+	l = swap(m, n);
+	write(m);
+	write(n);
+	l = pat(m, n);
+	return l;
+}
+
+int pat(int &m, &n) {
+	ldecl
+		int l;
+	endldecl
+	write(m);
+	write(n);
+	l = swap(m, n);
+	write(m);
+	write(n);
+	l = swap(m, n);
+	write(m);
+	write(n);
+	return l;
+}
+
+int swap(int &a, &b) {
+	ldecl
+		int tmp;
+	endldecl
+	
+	tmp = a;
+	a = b;
+	b = tmp;
+	return 0;
+}
+
+int main() {
+	ldecl 
+		int r, d;
+		int q;
+	endldecl
+	
+	q = 0;
+	r = 10;
+	d = 2;
+	write(r);
+	write(d);
+	q = top(r, d);
+	q = swap(r, d);
+	write(999);
+	write(r);
+	write(d);
+	return 0;
+}
+	
+	
+	

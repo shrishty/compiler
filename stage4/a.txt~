@@ -1,0 +1,22 @@
+a = 4;
+b = 9;
+d = a + b;
+write(d);
+while(a < b) do
+	a = a + 1;
+	c = 2 * d + c;
+	write(a);
+	write(c);
+endwhile;
+if(a == 9) then
+	write(c);
+	write(d);
+else
+	write(a);
+	write(b);
+endif;
+
+
+
+
+

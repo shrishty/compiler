@@ -1,0 +1,412 @@
+p-1 
+n-1 
+n-1 
+o-1 n-1 m-1 
+top
+1 1
+1 1
+1 1
+TName: l m
+TName: m m
+TName: l n
+TName: m n
+TName: n n
+TName: l o
+TName: m o
+TName: n o
+TName: o o
+TName: l l
+TName: l l
+l 1 1
+m 1 -5
+n 1 -4
+o 1 -3
+regno 0
+TName: l m
+TName: m m
+regno 1
+regno 1
+TName: l n
+TName: m n
+TName: n n
+regno 2
+regno 1
+TName: l o
+TName: m o
+TName: n o
+TName: o o
+regno 2
+TName: l l
+regno 1
+regno 2
+regno 1
+TName: l l
+regno 2
+regno 2
+regno 3
+recfact
+1 1
+TName: t p
+TName: temp p
+TName: rval p
+TName: p p
+TName: t p
+TName: temp p
+TName: rval p
+TName: p p
+TName: t rval
+TName: temp rval
+TName: rval rval
+TName: t p
+TName: temp p
+TName: rval p
+TName: p p
+TName: t p
+TName: temp p
+TName: rval p
+TName: p p
+TName: t recfact
+TName: temp recfact
+TName: rval recfact
+TName: p recfact
+recfact
+TName: t rval
+TName: temp rval
+TName: rval rval
+TName: t rval
+TName: temp rval
+TName: rval rval
+t 1 3
+temp 1 2
+rval 1 1
+p 1 -3
+regno 0
+TName: t p
+TName: temp p
+TName: rval p
+TName: p p
+regno 1
+regno 0
+TName: t p
+TName: temp p
+TName: rval p
+TName: p p
+regno 1
+regno 1
+regno 0
+TName: t rval
+TName: temp rval
+TName: rval rval
+regno 1
+regno 2
+regno 1
+TName: t p
+TName: temp p
+TName: rval p
+TName: p p
+regno 2
+regno 2
+TName: t p
+TName: temp p
+TName: rval p
+TName: p p
+regno 3
+regno 3
+regno 2
+TName: t rval
+TName: temp rval
+TName: rval rval
+regno 2
+regno 3
+regno 2
+TName: t rval
+TName: temp rval
+TName: rval rval
+regno 3
+regno 3
+regno 4
+fib
+1 1
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+TName: p rval
+TName: rval rval
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+TName: p rval
+TName: rval rval
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+TName: p p
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+TName: p m
+TName: rval m
+TName: m m
+TName: p p
+TName: p fib
+TName: rval fib
+TName: m fib
+TName: n fib
+fib
+TName: p m
+TName: rval m
+TName: m m
+TName: p fib
+TName: rval fib
+TName: m fib
+TName: n fib
+fib
+TName: p rval
+TName: rval rval
+TName: p rval
+TName: rval rval
+p 1 3
+rval 1 2
+m 1 1
+n 1 -3
+regno 0
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+regno 1
+regno 1
+regno 0
+TName: p rval
+TName: rval rval
+regno 1
+regno 2
+regno 1
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+regno 2
+regno 2
+regno 1
+TName: p rval
+TName: rval rval
+regno 2
+regno 3
+regno 2
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+regno 3
+regno 3
+regno 2
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+regno 3
+regno 3
+TName: p p
+regno 3
+regno 4
+regno 3
+TName: p n
+TName: rval n
+TName: m n
+TName: n n
+regno 4
+regno 4
+TName: p m
+TName: rval m
+TName: m m
+regno 4
+regno 5
+regno 4
+TName: p p
+regno 5
+regno 4
+regno 5
+TName: p m
+TName: rval m
+TName: m m
+regno 6
+regno 5
+TName: p rval
+TName: rval rval
+regno 5
+regno 6
+regno 5
+TName: p rval
+TName: rval rval
+regno 6
+regno 6
+regno 7
+tda
+1 1
+TName: k n
+TName: n n
+TName: k n
+TName: n n
+TName: k n
+TName: n n
+TName: k n
+TName: n n
+TName: k n
+TName: n n
+TName: k tda
+TName: n tda
+tda
+TName: k k
+TName: k k
+k 1 1
+n 1 -3
+regno 0
+TName: k n
+TName: n n
+regno 1
+regno 1
+regno 0
+TName: k n
+TName: n n
+regno 1
+regno 0
+TName: k n
+TName: n n
+regno 1
+regno 1
+TName: k n
+TName: n n
+regno 1
+regno 2
+regno 1
+TName: k n
+TName: n n
+regno 2
+regno 1
+TName: k k
+regno 2
+regno 3
+regno 2
+TName: k k
+regno 3
+regno 3
+regno 4
+TName: r q
+TName: q q
+TName: r r
+TName: r q
+TName: q q
+TName: r r
+TName: r top
+TName: q top
+top
+TName: r fib
+TName: q fib
+fib
+TName: r top
+TName: q top
+top
+TName: r fib
+TName: q fib
+fib
+TName: r fib
+TName: q fib
+fib
+TName: r top
+TName: q top
+top
+TName: r fib
+TName: q fib
+fib
+TName: r recfact
+TName: q recfact
+recfact
+TName: r r
+TName: r r
+FuncBody
+slist
+slist
+slist
+statement
+=
+q
+1
+=
+r
+1
+=
+r
+recfact
+fib
+top
+fib
+fib
+3
+call
+call
+call
+call
+call
+write
+r
+return
+0
+regno 1
+TName: r q
+TName: q q
+regno 2
+regno 3
+regno 2
+TName: r r
+regno 3
+regno 4
+regno 3
+regno 3
+regno 3
+TName: r q
+TName: q q
+regno 4
+regno 4
+TName: r r
+regno 5
+regno 3
+regno 3
+regno 3
+regno 3
+regno 3
+regno 3
+regno 3
+regno 3
+regno 3
+regno 3
+regno 3
+regno 3
+TName: r r
+regno 4
+regno 5
+regno 4
+TName: r r
+regno 5
+regno 4
+regno 5
+regno 6
+8
+7
+6
+5
+4
+3
+2
+1
+40320
+
+HALTING MACHINE

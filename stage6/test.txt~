@@ -1,0 +1,7 @@
+define a;
+define b[2];
+define c;
+
+a = 1;
+c = 5;
+b[a] = c;

@@ -1,0 +1,24 @@
+decl
+	int a, b, c, d;
+	int fact(int n);
+enddecl
+int fact(int n) {
+  ldecl
+	int k;
+  endldecl
+  if (n == 1) then 
+		k=1;
+  	else 
+		k=n;
+  endif;
+  return k;
+}
+int main ()
+{
+   ldecl
+	int a, b;
+   endldecl
+   a=4;
+   b=fact(a);
+   return 0;
+}

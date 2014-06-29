@@ -1,0 +1,129 @@
+%{
+	#include <stdio.h>
+	#include <stdlib.h>
+	void yyerror(char *);
+	int yylex(void);
+	int sym[26];
+	int temp;
+	struct node {
+		int node_type;
+		int val;
+		char op;
+		char var;
+		struct node *l, *r;
+	};
+	typedef struct node* tr;
+	#define YYSTYPE tr
+	void print1(struct node*);
+%}
+
+%start line
+%token INTEGER VARIABLE EXIT READ
+%right '=' print EVALUATE
+%left '+' '-'
+%left '*' '/'
+
+%%
+
+line: 
+	line statement '\n'
+	|
+	;
+
+statement:
+	expr		;
+	| VARIABLE '=' expr 	{
+					sym[$1 -> var - 'a'] = evaluate($3);
+				}
+	| READ '(' VARIABLE ')' 	{
+									printf("Enter a number: ");
+									scanf("%d", &temp);
+									sym[$3 -> var - 'a'] = temp;
+								}	
+	;
+
+expr:
+	INTEGER 		{$$ = $1;}
+	| VARIABLE		{$$ = $1;}
+	| expr '+' expr 	{
+					$$ = $2; 
+				 	$$ -> l = $1; 
+					$$ -> r = $3;
+				}
+	| expr '-' expr 	{
+					$$ = $2; 
+				 	$$ -> l = $1; 
+					$$ -> r = $3;
+				}
+	| expr '*' expr 	{
+					$$ = $2; 
+				 	$$ -> l = $1; 
+					$$ -> r = $3;
+				}
+	
+	| expr '/' expr 	{
+					$$ = $2; 
+				 	$$ -> l = $1; 
+					$$ -> r = $3;
+				}
+	| '(' expr ')'		{$$ = $2;}
+
+	| print expr  {
+				  print1($2);
+				  printf("\n");}
+	| EXIT		  {exit(EXIT_SUCCESS);}
+
+	| EVALUATE expr {printf("%d\n", evaluate($2));}
+	;	
+
+%%
+
+void yyerror(char *s) {
+  fprintf(stderr, "%s\n", s);
+}
+
+void print1(struct node *x) {
+	if(x != NULL) {
+		print1(x->l);
+		print1(x->r);
+		if(x->node_type == 0)
+			printf("%c", x->op);
+		if(x->node_type == 1)
+			printf("%d", x->val);
+		if(x->node_type == 2)
+			printf("%c", x->var);
+	}
+}
+
+int evaluate(struct node *x) {
+	if(x != NULL) {
+		if(x -> node_type == 0) {
+			switch(x -> op) {
+				case '+':
+					return evaluate(x->l) + evaluate(x -> r);
+				case '-':
+					return evaluate(x->l) - evaluate(x -> r);
+				case '*':
+					return evaluate(x->l) * evaluate(x -> r); 
+				case '/':
+					return evaluate(x->l) / evaluate(x -> r);
+			}
+		}
+		if(x -> node_type == 1)
+			return x -> val;
+		if(x -> node_type == 2) 
+			return sym[x -> var - 'a'];
+	}
+}
+	
+/*  READ '(' VARIABLE ')' 	{
+									printf("Enter a number: ");
+									int p;
+									fscanf(stdin, "%d", &p);
+									sym[$3 -> var - 'a'] = p;
+								}		*/			
+	
+int main(void) {
+  yyparse();
+  return 0;
+}

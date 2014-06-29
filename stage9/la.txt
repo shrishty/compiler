@@ -1,0 +1,33 @@
+decl
+	
+	int f(int x);
+enddecl
+int f(int x)
+{
+  ldecl
+	int k, l;
+	
+  endldecl
+  
+  if(x>=100)
+	then
+		k=100;
+	else
+		l=x+10;
+		k= f(f(l));
+		write(l);
+  endif;
+return k;
+}
+
+
+int main ()
+{
+   ldecl
+	int k, a, b;
+   endldecl
+   a=85;
+   b=f(a);
+   write(b);
+   return b;
+}

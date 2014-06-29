@@ -1,0 +1,76 @@
+decl
+	int d, a, b, x, y;
+	(int, int) gcd(int l);
+	int gcdn(int l);
+enddecl
+
+int gcdn(int l) {
+	ldecl
+		int rval, temp;
+	endldecl
+	
+	if(a == 0) then
+		rval = b;
+	else
+		if(b == 0) then
+			rval = a;
+		else
+			temp = b % a;
+			b = a;
+			a = temp;
+			write(a);
+			write(b);
+			rval = gcdn(4);
+		endif;
+	endif;
+	return rval;
+}
+
+(int, int) gcd(int l) {
+	ldecl
+		int r, temp, q, m, n;
+		(int, int) pair;
+	endldecl
+	
+	if(b == 0) then
+		x = 0;
+		y = 1;
+		first(pair) = 1;
+		second(pair) = 0;
+		d = a;
+	else
+		q = a / b;
+		write(1000);
+		write(q);
+		temp = a % b;
+		a = temp;
+		b = a;
+		
+		pair = gcd(l);
+		temp = x;
+		x = first(pair) - q * x;
+		first(pair) = temp;
+		
+		temp = y;
+		y = second(pair) - q * y;
+		second(pair) = temp;
+	endif;
+	return pair;
+}
+
+int main() {
+	ldecl
+		(int, int) pair;
+		int m, n;
+	endldecl
+	read(a);
+	read(b);
+	m = gcdn(a);
+	write(9999);
+	m = first(pair);
+	n = second(pair);
+	write(m);
+	write(n);
+	
+	return 0;
+}

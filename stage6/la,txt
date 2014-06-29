@@ -1,0 +1,19 @@
+define a;
+define i;
+define b[10];
+define c[10];
+i=0;
+a=0;
+while (a<18)
+	do
+	    a=a+2;
+	    i=i+1;
+	    write (a);
+	    b[a/2]=a;
+endwhile;
+i=0;
+while(i<10)
+	do
+	write (b[i]);
+	i=i+1;
+	endwhile;

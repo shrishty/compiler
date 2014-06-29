@@ -1,0 +1,80 @@
+decl
+	int a, b, c;
+	int recfact(int p);
+	int fib(int n);
+	int tda(int n);
+	int top(int m, n, o);
+	
+enddecl
+
+int top(int m, n, o) {
+	ldecl
+		int l;
+	endldecl
+	
+	write(m);
+	write(n);
+	write(o);
+	return 0;
+}
+	
+int recfact(int p) {
+	ldecl
+		int rval, temp, t;
+	endldecl
+	
+	if(p == 1) then
+		rval = 1;
+	else 
+		temp = p;
+		p = p - 1;
+		t = recfact(p);
+		rval = temp * t;
+	endif;
+	return rval;
+}
+
+int fib(int n) {
+	ldecl
+		int m, rval, p;
+	endldecl
+	if(n == 0) then
+		rval = 0;
+	endif;
+	if(n == 1) then
+		rval = 1;
+	endif;
+	if(n >= 2) then
+		p = n - 1;
+		m = n - 2;
+		rval = fib(p) + fib(m);
+	endif;
+	return rval;
+}
+	
+int tda(int n) {
+	ldecl
+		int k;
+	endldecl
+	
+	if(n != 0) then
+		write(n);
+		n = n - 1;
+		k = tda(n);
+	endif;
+	return k;
+}
+
+INT main() {
+	ldecl 
+		int q, r;
+	endldecl
+	
+	q = 8;
+	r = top(5 4 1);
+	write(r);
+	return 0;
+}
+	
+	
+	

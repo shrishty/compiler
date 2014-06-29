@@ -1,0 +1,44 @@
+decl
+	int arr[5], i, max, j, temp;
+	int func(bool a, b; int d, e; bool f);
+enddecl
+
+
+int func(bool a, b; int d, e; bool f) { 
+	ldecl
+		int x, y, z;
+		bool m, n;
+	endldecl
+	i = 0;
+	while(i < 5) do
+		read(arr[i]);
+		i = i + 1;
+	endwhile;
+
+	i = 0;
+	while(i < 5) do
+		j = 0;
+		while(j < 5) do
+			if(arr[i] > arr[j]) then
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			else
+				max = 1;
+			endif;		
+			j = j + 1;
+		endwhile;
+		i = i + 1;
+	endwhile;
+
+	i = 0;
+	while(i < 5) do
+		write(arr[i]);
+		i = i + 1;
+	endwhile;
+
+	return 0;
+}
+
+func(a b c d e);
+		 

@@ -1,0 +1,85 @@
+decl
+	int array[20], left[20], right[20], n;
+	int merge(int p, q, r);
+	int mergesort(int p, r);	
+enddecl
+
+int merge(int p, q, r) {
+	ldecl
+		int f, s, i, j, k;
+	endldecl
+	
+	f = q - p + 1;
+	s = r - q;
+	
+	i = 0;
+	
+	while(i < f) do
+		left[i] = array[p + i];
+		i = i + 1;
+	endwhile;
+	
+	i = 0;
+	while(i < s) do
+		right[i] = array[q + i + 1];
+		i = i + 1;
+	endwhile;
+	
+	left[f] = 9999;
+	right[s] = 9999;
+	i = 0;
+	j = 0;
+	k = p;
+	
+	while(k < r) do
+		if(left[i] <= right[j]) then
+			array[k] = left[i];
+			i = i + 1;
+		else
+			array[k] = right[j];
+			j = j + 1;
+		endif;
+		
+		k =  k + 1;
+	endwhile;
+	
+	return 0;
+}	
+
+int mergesort(int p, r) {
+	ldecl
+		int temp, q;
+	endldecl
+	
+	if(p < r) then
+		q = (p+r)/2;
+		temp = mergesort(p, q);
+		temp = mergesort(q+1, r);
+		temp = merge(p, q, r);
+	endif;
+	
+	return 0;
+}
+
+int main() {
+	ldecl
+		int r, i;
+	endldecl
+	
+	read(n);
+	i = 0;
+	while(i < n) do
+		read(array[i]);
+		i = i + 1;
+	endwhile;
+	
+	r = mergesort(0, n - 1);
+	i = 0;
+	write(999);
+	while(i < n) do
+		write(array[i]);
+		i = i + 1;
+	endwhile;
+	return 0;
+}
+ 		

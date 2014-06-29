@@ -1,0 +1,32 @@
+decl
+	int arr[5], i, max, j, temp;
+enddecl
+
+i = 0;
+while(i < 5) do
+	read(arr[i]);
+	i = i + 1;
+endwhile;
+
+i = 0;
+while(i < 5) do
+	while(j < 5) do
+		if(arr[i] > arr[j]) then
+			temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+		else
+			max = 1;
+		endif;		
+		j = j + 1;
+	endwhile;
+	i = i + 1;
+endwhile;
+
+i = 0;
+while(i < 5) do
+	write(arr[i]);
+	i = i + 1;
+endwhile;
+
+		 

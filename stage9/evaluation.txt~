@@ -1,0 +1,55 @@
+decl
+	(int, int ) a;
+	(int, int) pairf(int p, q);
+	int top(int m, n, o);
+enddecl
+
+int top(int m, n, o) {
+	ldecl
+		int l;
+	endldecl
+	l = m + n + o;
+	return l;
+}
+
+(int, int) pairf(int p, q) {
+	ldecl
+		(int, int) pair;
+		int a, b;
+	endldecl
+	
+	write(p);
+	write(q);
+	first(pair) = p;
+	second(pair) = q;
+	a = first(pair);
+	write(a);
+	b = second(pair);
+	write(b);
+	
+	return pair;
+}
+
+int main() {
+	ldecl 
+		int q, r;
+		(int, int) pair;
+	endldecl
+	q = 19;
+	r = 5;
+	pair = pairf(q, r);
+	q = 0;
+	r = 0;
+	write(q);
+	write(r);
+	q = first(pair);
+	r = second(pair);
+	write(q);
+	write(r);
+	q = 5;
+	r = 1;
+	r = top(q, r, r);
+	write(r);
+	return 0;
+}
+	

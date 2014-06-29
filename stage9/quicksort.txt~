@@ -1,0 +1,63 @@
+decl
+	int a[25], n;
+	int quicksort(int beg, end);
+	int partition(int beg, end);
+enddecl
+
+int quicksort(int beg, end) {
+	ldecl
+		int mid, temp;
+	endldecl
+	if(beg < end) then
+		mid = partition(beg, end);
+		temp = quicksort(beg, mid - 1);
+		temp = quicksort(mid + 1, end);
+	endif;
+	return temp;
+}	
+
+int partition(int beg, end) {
+	ldecl
+		int x, i, temp, j;
+	endldecl
+	
+	x = a[end];
+	i = beg - 1;
+	j = beg;
+	
+	while(j < end) do 
+		if(a[j] <= x) then
+			i = i + 1;
+			 temp = a[i];
+			 a[i] = a[j];
+			 a[j] = temp;
+		endif;
+		j = j + 1;
+	endwhile;
+	temp = a[i + 1];
+	a[i + 1] = a[end];
+	a[end] = temp;
+	
+	return i + 1;
+}
+
+int main() {
+	ldecl
+		int r, i;
+	endldecl
+	
+	read(n);
+	i = 0;
+	while(i < n) do
+		read(a[i]);
+		i = i + 1;
+	endwhile;
+	
+	r = quicksort(0, 4);
+	i = 0;
+	while(i < n) do
+		write(a[i]);
+		i = i + 1;
+	endwhile;
+	return 0;
+}
